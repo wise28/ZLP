@@ -1,0 +1,16 @@
+//system
+
+@import "block/system/breakpoints";
+@import "block/system/mixin";
+@import "block/system/var";
+
+//form
+
+@import "block/form/form";
+@import "block/form/button";
+
+//custom styles
+
+@import "header";
+@import "main";
+@import "footer";
