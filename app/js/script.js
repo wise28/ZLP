@@ -149,8 +149,7 @@ $(document).ready(function(){
     });
 
     $('.btn-details').click(function(){
-        $('.select-project').addClass('d-none');
-        $('.description-page').removeClass('d-none');
+        offPreloader('select-project', 'description-page');;
         descriptionPageHeight ();
     });
 });
