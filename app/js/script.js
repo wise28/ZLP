@@ -29,7 +29,7 @@ $('.menu-desktop-content').hover(
 
 /*hover for filter-desktop*/
 
-$('.filter-desktop').hover(
+$('.filter-desktop, .menu-filter-desktop__content').hover(
     function(){
         $('.menu-filter-desktop__content').removeClass('d-none');
         $('.menu-filter-desktop__content').addClass('d-inline-flex');
@@ -37,20 +37,20 @@ $('.filter-desktop').hover(
     },
     function(){
         $('.menu-filter-desktop__content').removeClass('d-inline-flex');
-        $('.menu-filter-desktop__content').addClass('d-none')
+        $('.menu-filter-desktop__content').addClass('d-none');
     });
 
-
-$('.menu-filter-desktop__content').hover(
-    function(){
-        $(this).removeClass('d-none');
-        $(this).addClass('d-inline-flex');
-
-    },
-    function(){
-        $(this).removeClass('d-inline-flex');
-        $(this).addClass('d-none')
-    });
+//TODO: Remove this duplicate code after release
+// $('.menu-filter-desktop__content').hover(
+//     function(){
+//         $(this).removeClass('d-none');
+//         $(this).addClass('d-inline-flex');
+//
+//     },
+//     function(){
+//         $(this).removeClass('d-inline-flex');
+//         $(this).addClass('d-none');
+//     });
 
 
 /*ховер на картинку preview-projects*/
@@ -86,7 +86,7 @@ $(document).ready(function(){
 /*вычисление высоты блока с описанием проекта*/
 $(document).ready(function(){
     function descriptionPageHeight (){
-
+    try{
         let headerContainer = document.querySelector('.header-container');
         let descriptionPageContainer = document.querySelector('.description-page__container');
         let descriptionPage = document.querySelector('.description-page');
@@ -94,8 +94,41 @@ $(document).ready(function(){
         let headerDescriptionPage = descriptionPageContainer.style.height = descriptionPage.clientHeight - headerBlockHeight + 'px';
 
         return headerDescriptionPage;
+    }catch(e){
+        console.log(e.message)
+    }
+
 
 
     }
     descriptionPageHeight ();
+
+
+    /**
+     * Function disabling preloader page and show content block
+     *
+     * @param preloaderClass
+     * @param contentClass
+     */
+    function offPreloader(preloaderClass, contentClass){
+        $('.' + preloaderClass).removeClass('d-block');
+        $('.' + preloaderClass).addClass('d-none');
+
+        $('.' + contentClass).removeClass('d-none');
+        $('.' + contentClass).addClass('d-block');
+
+    }
+
+    $('.preloader-page').click(function(){
+        offPreloader('preloader-page', 'preview-projects');
+
+    });
+
+    $('.preloader-page').scroll(function(){
+        console.log('scroll');
+    });
+
+    setTimeout(" $('.preloader-page').click()", 2000);
+
 });
+
