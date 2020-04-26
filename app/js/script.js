@@ -111,16 +111,15 @@ $(document).ready(function(){
      * @param contentClass
      */
     function offPreloader(preloaderClass, contentClass){
-        $('.' + preloaderClass).removeClass('d-block');
         $('.' + preloaderClass).addClass('d-none');
 
         $('.' + contentClass).removeClass('d-none');
-        $('.' + contentClass).addClass('d-block');
 
     }
 
     $('.preloader-page').click(function(){
         offPreloader('preloader-page', 'preview-projects');
+        offPreloader('preloader-page', 'select-project');
 
     });
 
@@ -130,5 +129,29 @@ $(document).ready(function(){
 
     setTimeout(" $('.preloader-page').click()", 2000);
 
+    $(document).keydown(function(e) {
+        switch (e.which) {
+            case 37:
+                $('.slick-slider').slick('slickPrev');
+                break;
+
+            case 38:
+                $('.btn-details').click();
+                break;
+            case 39:
+                $('.slick-slider').slick('slickNext');
+                break;
+
+            case 40:
+                offPreloader('description-page', 'select-project');
+                break;
+        }
+    });
+
+    $('.btn-details').click(function(){
+        $('.select-project').addClass('d-none');
+        $('.description-page').removeClass('d-none');
+        descriptionPageHeight ();
+    });
 });
 
