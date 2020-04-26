@@ -149,7 +149,7 @@ $(document).ready(function(){
     });
 
     $('.btn-details').click(function(){
-        offPreloader('select-project', 'description-page');;
+        offPreloader('select-project', 'description-page');
         descriptionPageHeight ();
     });
 });
