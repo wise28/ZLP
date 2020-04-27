@@ -161,3 +161,10 @@ $(document).ready(function(){
     /**********************************************/
 });
 
+$(document).ready(function(){
+    $(".onepage-wrapper").onepage_scroll({
+        sectionContainer: "section",
+        responsiveFallback: false,
+        loop: true
+    });
+});

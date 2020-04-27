@@ -191,7 +191,7 @@ a {
 }
 
 .projest-slide {
-
+  height: 600px;
   img {
     width: 100%;
     max-height: 550px;
@@ -210,4 +210,11 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.filter-desktop {
+  min-height: 21px;
+}
+
+.onepage-pagination {
+  display: none;
 }

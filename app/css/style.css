@@ -219,9 +219,11 @@ a {
   -o-transition: all 0.6s;
   transition: all 0.6s; }
 
-.projest-slide img {
-  width: 100%;
-  max-height: 550px; }
+.projest-slide {
+  height: 600px; }
+  .projest-slide img {
+    width: 100%;
+    max-height: 550px; }
 
 .select-project {
   height: 100vh;
@@ -256,3 +258,9 @@ a {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
+
+.filter-desktop {
+  min-height: 21px; }
+
+.onepage-pagination {
+  display: none; }
