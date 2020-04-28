@@ -252,6 +252,16 @@ a {
     background-color: rgba(0,0,0,0.2);
     box-shadow: 0px -15px 170px -4px rgba(0,0,0,0.4);
   }
+
+}
+.photo-education-slide {
+  padding-left: 0;
+  padding-bottom: 0;
+  img {
+    //max-width: initial;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .bureau-page-content {
   width: 100%;
@@ -269,6 +279,9 @@ a {
 }
 .h2 {
   font-size: 25px;
+}
+.h3 {
+  font-size: 18px;
 }
 //.team-page__header .h2{
 //  position: relative;
@@ -368,3 +381,36 @@ a {
     margin: 0 auto;
   }
 }
+
+/*for tooltips*/
+.btn-education {
+  display: inline-block;
+  position: relative;
+  &:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 120%;
+    z-index: 1;
+    background: transparent;
+    font-size: 9px;
+    //padding: 5px 10px;
+    text-align: left;
+  }
+}
+.slide-img {
+  display: inline-block;
+  position: relative;
+  &:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+    background: transparent;
+    font-size: 9px;
+    //padding: 5px 10px;
+    text-align: left;
+  }
+}
+

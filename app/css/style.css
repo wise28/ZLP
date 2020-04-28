@@ -12,12 +12,22 @@
   .btn:hover {
     background-color: #464646;
     color: white; }
+  .btn:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none; }
 
 .btn-back {
   width: 73px; }
 
 .btn-details {
   width: 104px; }
+
+.btn_background {
+  background-color: #464646;
+  color: white; }
+  .btn_background:hover {
+    color: #464646;
+    background-color: transparent; }
 
 @font-face {
   font-family: 'Conv_Radomir Tinkov - Gilroy-Bold';
@@ -316,6 +326,14 @@ a {
     -webkit-box-shadow: 0px -15px 170px -4px rgba(0, 0, 0, 0.4);
             box-shadow: 0px -15px 170px -4px rgba(0, 0, 0, 0.4); }
 
+.photo-education-slide {
+  padding-left: 0;
+  padding-bottom: 0; }
+  .photo-education-slide img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
 .bureau-page-content {
   width: 100%; }
 
@@ -331,6 +349,9 @@ a {
 
 .h2 {
   font-size: 25px; }
+
+.h3 {
+  font-size: 18px; }
 
 .line-dotted {
   background-image: url("../img/icons/curcle.svg");
@@ -423,3 +444,30 @@ a {
         -ms-flex-pack: center;
             justify-content: center;
     margin: 0 auto; }
+
+/*for tooltips*/
+.btn-education {
+  display: inline-block;
+  position: relative; }
+  .btn-education:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 120%;
+    z-index: 1;
+    background: transparent;
+    font-size: 9px;
+    text-align: left; }
+
+.slide-img {
+  display: inline-block;
+  position: relative; }
+  .slide-img:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+    background: transparent;
+    font-size: 9px;
+    text-align: left; }

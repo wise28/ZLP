@@ -83,6 +83,12 @@ $(document).ready(function(){
 });
 
 
+//инициализация слайда на странице education
+$(document).ready(function(){
+    $('.photo-bureau-page-wrap').slick({});
+});
+
+
 /*вычисление высоты блока с описанием проекта*/
 $(document).ready(function(){
     function descriptionPageHeight (){
