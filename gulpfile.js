@@ -24,7 +24,7 @@ gulp.task('browser-sync', function(){
     browserSync({
         server: {
           baseDir: 'app',
-          index: 'education.html'
+          index: 'bureau.html'
         },
         notify: false
     });

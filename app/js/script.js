@@ -1,7 +1,4 @@
-/*для преобразования меню в крестик при клике*/
-function myFunction(x) {
-    x.classList.toggle("change");
-}
+
 
 /*hover for menu-desktop*/
 $('.menu-icon').hover(
@@ -77,15 +74,14 @@ $(document).ready(function(){
         });
 
 });
-/*инициализация слайдера на странице проекта*/
+
+
+
+//инициализация слайдеров на странице projects education bureau
 $(document).ready(function(){
     $('.projest-slide').slick({});
-});
-
-
-//инициализация слайда на странице education
-$(document).ready(function(){
-    $('.photo-bureau-page-wrap').slick({});
+    $('.education-slide').slick({});
+    $('.bureau-mobile-slide').slick({});
 });
 
 
@@ -173,4 +169,74 @@ $(document).ready(function(){
         responsiveFallback: false,
         loop: true
     });
+});
+
+/*for вуылещз menu на кранах меньше 1200*/
+
+// $(document).ready(function() {
+//     $(window).resize(function() {
+//         if ($(window).width() <= '1200'){
+//            }
+//         else   {
+//
+//         }
+//
+//     });
+// });
+
+$(document).ready(function() {
+    // $(window).resize(function() {
+        if ($(window).height() <= '1000'){
+            $('.projest-slide').css('height', '450px');
+           }
+        else   {
+            $('.projest-slide').css('height', '600px');
+        }
+
+
+
+    // });
+});
+
+$(window).resize(function() {
+    if ($(window).height() <= '1000'){
+        $('.projest-slide').css('height', '450px');
+        $('.projest-slide img').css('height', '450px');
+    }
+    else   {
+        $('.projest-slide').css('height', '600px');
+        $('.projest-slide img').css('height', '600px');
+    }
+    $('.projest-slide').slick({});
+});
+
+$(document).ready(function(){
+    $('.menu-icon').click(function(){
+        $('body').toggleClass('mob-menu-active');
+    });
+
+
+    $('.mobile-menu a').on('click', function(){
+        $('body').removeClass('mob-menu-active');
+    });
+
+
+});
+/*для преобразования меню в крестик при клике*/
+function openMobileMenu(x) {
+    x.classList.toggle("change");
+}
+$(document).ready(function(){
+    if ($(window).width() <= '992'){
+        $('body').addClass('bureau-mobile');
+    }else {
+        $('body').removeClass('bureau-mobile');
+    }
+});
+$(window).resize(function() {
+    if ($(window).width() <= '992'){
+        $('body').addClass('bureau-mobile');
+    }else {
+        $('body').removeClass('bureau-mobile');
+    }
 });

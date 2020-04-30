@@ -29,3 +29,18 @@
     background-color: transparent;
   }
 }
+.btn-up-mobile {
+  border: none;
+  &:hover {
+    background-color: transparent;
+  }
+  img {
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+}
+.btn_margin {
+  margin-top: 16px;
+}
