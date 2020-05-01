@@ -142,10 +142,10 @@ a {
   transform: rotate(45deg) translate(-5px, 4px);
 }
 
-.preview-projects__padding {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
+//.preview-projects__padding {
+//  padding-top: 40px;
+//  padding-bottom: 40px;
+//}
 
 .header-title {
   position: absolute;
@@ -672,5 +672,22 @@ body.mob-menu-active {
   img {
     height: 350px;
     object-fit: cover;
+    width: 100%;
+  }
+}
+.bureau-page__left_mobile {
+  height: auto;
+  text-transform: initial;
+}
+
+.photo-bureau-page-full-size_mobile {
+  padding-left: 0;
+  padding-bottom: 0;
+  height: 350px;
+  &:before {
+    content: none;
+  }
+  .counter__wrap {
+    top: 80%;
   }
 }
