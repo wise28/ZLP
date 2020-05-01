@@ -212,10 +212,10 @@ a {
   position: relative;
   &:hover {
     transform: scale(1.1);
-    //transition: all 0.6s;
+    //transition: all 0.2s;
     .preview-projects__item-text-hover {
       transform: translateY(-4px);
-      transition: all 1s;
+      transition: all 0.2s;
     }
   }
   img {
