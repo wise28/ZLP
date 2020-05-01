@@ -235,7 +235,7 @@ $(document).ready(function(){
     /**
      * Закрытие блока профиля учредителя
      */
-     $('.pr-2').click(function(){
+     $('.menu-icon_mobile').click(function(){
          $(this).closest('.modal-profile').removeClass('modal-profile-active');
      });
 });
