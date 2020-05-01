@@ -192,10 +192,6 @@ a {
       -ms-transform: rotate(45deg) translate(-5px, 4px);
           transform: rotate(45deg) translate(-5px, 4px); }
 
-.preview-projects__padding {
-  padding-top: 40px;
-  padding-bottom: 40px; }
-
 .header-title {
   position: absolute;
   display: -webkit-box;
@@ -730,6 +726,20 @@ body.mob-menu-active {
        object-fit: cover; }
 
 .modal-profile .menu-icon_mobile {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  height: 15px;
+  position: relative;
+  width: 30px;
+  margin-right: 40px;
+  z-index: 5; }
+  .modal-profile .menu-icon_mobile:hover {
+    opacity: 0.8; }
+
+.modal-profile .menu-icon_position {
   position: absolute;
   top: 2%;
   right: 0;
@@ -771,4 +781,18 @@ body.mobal-active {
   .education-mobile-slide img {
     height: 350px;
     -o-object-fit: cover;
-       object-fit: cover; }
+       object-fit: cover;
+    width: 100%; }
+
+.bureau-page__left_mobile {
+  height: auto;
+  text-transform: initial; }
+
+.photo-bureau-page-full-size_mobile {
+  padding-left: 0;
+  padding-bottom: 0;
+  height: 350px; }
+  .photo-bureau-page-full-size_mobile:before {
+    content: none; }
+  .photo-bureau-page-full-size_mobile .counter__wrap {
+    top: 80%; }

@@ -254,11 +254,11 @@ $(window).resize(function() {
 
 // $(document).ready(function() {
 //     function getSlideHeight() {
-//         let bodyHeignt = document.documentElement.clientHeight;
+//         let bodyHeight = document.documentElement.clientHeight;
+//
 //         let headerHeight = document.querySelector('.bureau-mobile').offsetHeight;
 //         let slideElem = document.querySelector('.bureau-mobile-slide');
-//         let slideHeight = bodyHeignt - headerHeight;
-//         slideElem.style.height = slideHeight;
+//         slideElem.style.height = bodyHeight - headerHeight;
 //         return slideElem;
 //     }
 //    getSlideHeight();
