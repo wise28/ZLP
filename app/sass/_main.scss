@@ -179,7 +179,7 @@ a {
     width: 25%;
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     @include media-breakpoint-down(lg) {
       width: 50%;
     }
@@ -192,6 +192,9 @@ a {
   //display: none;
   position: absolute;
   width: 100%;
+  transform: translateY(-34px);
+  z-index: 1;
+
 }
 .preview-projects__item-text {
 //opacity: 0;
@@ -200,6 +203,7 @@ a {
   justify-content: space-between;
   z-index: 2;
   //width: 100%;
+
 }
 .is-hover{
 
@@ -208,8 +212,15 @@ a {
   position: relative;
   &:hover {
     transform: scale(1.1);
-    transition: all 0.6s;
-
+    //transition: all 0.6s;
+    .preview-projects__item-text-hover {
+      transform: translateY(-4px);
+      transition: all 1s;
+    }
+  }
+  img {
+    z-index: 3;
+    position: relative;
   }
 }
 
