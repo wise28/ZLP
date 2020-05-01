@@ -174,20 +174,20 @@ a {
   left: 42%; }
 
 /* Rotate first bar */
-.change .bar1, .close .bar1 {
+.change .bar1 {
   -webkit-transform: rotate(-45deg) translate(5px, 4px);
       -ms-transform: rotate(-45deg) translate(5px, 4px);
           transform: rotate(-45deg) translate(5px, 4px); }
 
 /* Fade out the second bar */
-.change .bar2, .close .bar2 {
+.change .bar2 {
   opacity: 0;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s; }
 
 /* Rotate last bar */
-.change .bar3, .close .bar3 {
+.change .bar3 {
   -webkit-transform: rotate(45deg) translate(-5px, 4px);
       -ms-transform: rotate(45deg) translate(-5px, 4px);
           transform: rotate(45deg) translate(-5px, 4px); }

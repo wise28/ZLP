@@ -224,11 +224,20 @@ $(document).ready(function(){
         $('body').removeClass('mob-menu-active');
     });
 
+    /**
+     * Открытие блока профиля учредителя
+     */
     $('#zimailo-link, #liachenko-link').click(function(){
         var block = $(this).data('block');
-        console.log(block);
         $('#' + block).toggleClass('modal-profile-active');
     });
+
+    /**
+     * Закрытие блока профиля учредителя
+     */
+     $('.pr-2').click(function(){
+         $(this).closest('.modal-profile').removeClass('modal-profile-active');
+     });
 });
 /*для преобразования меню в крестик при клике*/
 function openMobileMenu(x) {
