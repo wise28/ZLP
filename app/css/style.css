@@ -39,6 +39,13 @@
 .btn_margin {
   margin-top: 16px; }
 
+.btn-slide__wrap {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  text-align: center; }
+
 @font-face {
   font-family: 'Conv_Radomir Tinkov - Gilroy-Bold';
   src: url("../fonts/Radomir Tinkov - Gilroy-Bold.eot");
@@ -442,6 +449,8 @@ a {
     color: #464646; }
   .awards-page__content {
     padding-bottom: 20px; }
+  .awards-page__year_mobile {
+    padding-bottom: 20px; }
 
 .bureau {
   text-transform: uppercase; }
@@ -486,7 +495,11 @@ a {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: 0 auto; }
+    margin: 0 auto;
+    text-transform: uppercase; }
+  .owner-information__content_mobile {
+    width: 100%;
+    height: auto; }
 
 /*for tooltips*/
 .btn-education {
@@ -639,6 +652,7 @@ body.mob-menu-active {
           transform: translate(0, 0); }
 
 .mobile-menu-container {
+  overflow: hidden;
   position: fixed;
   z-index: 5;
   top: 0;
@@ -701,3 +715,30 @@ body.mob-menu-active {
         content: ',';
         right: -4px;
         bottom: -2px; }
+  .person img {
+    width: 315px;
+    height: 315px;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.modal-profile__img {
+  position: relative; }
+  .modal-profile__img img {
+    width: 375px;
+    height: 375px;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.modal-profile .menu-icon_mobile {
+  position: absolute;
+  top: 2%;
+  right: 0;
+  margin-right: 0;
+  margin-left: 40px; }
+
+.education-mobile-slide {
+  height: 350px; }
+  .education-mobile-slide img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }

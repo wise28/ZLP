@@ -391,6 +391,9 @@ a {
   &__content {
     padding-bottom: 20px;
   }
+  &__year_mobile {
+    padding-bottom: 20px;
+  }
 }
 .bureau {
   text-transform: uppercase;
@@ -421,6 +424,11 @@ a {
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    text-transform: uppercase;
+  }
+  &__content_mobile {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -556,6 +564,7 @@ body.mob-menu-active {
 }
 
 .mobile-menu-container {
+  overflow: hidden;
   position: fixed;
   z-index: 5;
   top: 0;
@@ -613,5 +622,55 @@ body.mob-menu-active {
   img {
     width: 315px;
     height: 315px;
+    object-fit: cover;
+  }
+}
+
+.modal-profile {
+  &__img {
+    position: relative;
+    img {
+      width: 375px;
+      height: 375px;
+      object-fit: cover;
+    }
+  }
+  .menu-icon_mobile {
+    position: absolute;
+    top: 2%;
+    right: 0;
+    margin-right: 0;
+    margin-left: 40px;
+  }
+
+}
+
+//.modal-profile {
+//  position: fixed;
+//  z-index: 5;
+//  top: 0;
+//  right: 0;
+//  left: 0;
+//  bottom: 0;
+//  background-color: white;
+//  transform: translate(100%, 0);
+//  transition: all 0.4s;
+//  padding: 70px 20px;
+//  overflow-y: scroll;
+//}
+//
+//.mobal-active .mobile-menu-container {
+//  transform: translate(0,0);
+//}
+//
+//body.mobal-active {
+//  overflow: hidden;
+//}
+
+.education-mobile-slide {
+  height: 350px;
+  img {
+    height: 350px;
+    object-fit: cover;
   }
 }

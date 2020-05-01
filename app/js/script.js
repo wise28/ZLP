@@ -82,6 +82,7 @@ $(document).ready(function(){
     $('.projest-slide').slick({});
     $('.education-slide').slick({});
     $('.bureau-mobile-slide').slick({});
+    $('.education-mobile-slide').slick({});
 });
 
 
@@ -169,6 +170,9 @@ $(document).ready(function(){
         responsiveFallback: false,
         loop: true
     });
+    $(document).on('mousewheel DOMMouseScroll', '.awards-page', function(event) {
+        event.stopPropagation();
+    });
 });
 
 /*for вуылещз menu на кранах меньше 1200*/
@@ -240,3 +244,19 @@ $(window).resize(function() {
         $('body').removeClass('bureau-mobile');
     }
 });
+
+//определение высоты слайдера на странице бюро в мобилке
+
+// $(document).ready(function() {
+//     function getSlideHeight() {
+//         let bodyHeignt = document.documentElement.clientHeight;
+//         let headerHeight = document.querySelector('.bureau-mobile').offsetHeight;
+//         let slideElem = document.querySelector('.bureau-mobile-slide');
+//         let slideHeight = bodyHeignt - headerHeight;
+//         slideElem.style.height = slideHeight;
+//         return slideElem;
+//     }
+//    getSlideHeight();
+// });
+
+
