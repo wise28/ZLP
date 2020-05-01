@@ -645,27 +645,31 @@ body.mob-menu-active {
 
 }
 
-//.modal-profile {
-//  position: fixed;
-//  z-index: 5;
-//  top: 0;
-//  right: 0;
-//  left: 0;
-//  bottom: 0;
-//  background-color: white;
-//  transform: translate(100%, 0);
-//  transition: all 0.4s;
-//  padding: 70px 20px;
-//  overflow-y: scroll;
-//}
-//
-//.mobal-active .mobile-menu-container {
-//  transform: translate(0,0);
-//}
-//
-//body.mobal-active {
-//  overflow: hidden;
-//}
+.modal-profile {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  transform: translate(-100%, 0);
+  transition: all 0.4s;
+  padding: 70px 20px;
+  overflow-y: scroll;
+}
+
+.modal-profile-active {
+  transform: translate(0,0);
+}
+
+.mobal-active .mobile-menu-container {
+  transform: translate(0,0);
+}
+
+body.mobal-active {
+  overflow: hidden;
+}
 
 .education-mobile-slide {
   height: 350px;

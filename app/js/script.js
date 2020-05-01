@@ -224,7 +224,11 @@ $(document).ready(function(){
         $('body').removeClass('mob-menu-active');
     });
 
-
+    $('#zimailo-link, #liachenko-link').click(function(){
+        var block = $(this).data('block');
+        console.log(block);
+        $('#' + block).toggleClass('modal-profile-active');
+    });
 });
 /*для преобразования меню в крестик при клике*/
 function openMobileMenu(x) {
@@ -244,6 +248,7 @@ $(window).resize(function() {
         $('body').removeClass('bureau-mobile');
     }
 });
+
 
 //определение высоты слайдера на странице бюро в мобилке
 
