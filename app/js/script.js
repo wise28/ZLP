@@ -163,11 +163,11 @@ $(document).ready(function(){
     });
 });
 
-/*for вуылещз menu на кранах меньше 1200*/
+/*for menu на экранах меньше 1360*/
 
 // $(document).ready(function() {
 //     $(window).resize(function() {
-//         if ($(window).width() <= '1200'){
+//         if ($(window).width() <= '1360'){
 //            }
 //         else   {
 //

@@ -267,9 +267,9 @@ a {
       -webkit-transform: translateY(-4px);
           -ms-transform: translateY(-4px);
               transform: translateY(-4px);
-      -webkit-transition: all 0.2s;
-      -o-transition: all 0.2s;
-      transition: all 0.2s; }
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
   .projects-hover img {
     z-index: 3;
     position: relative; }
