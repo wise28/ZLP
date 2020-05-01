@@ -52,28 +52,16 @@ $('.filter-desktop, .menu-filter-desktop__content').hover(
 
 /*ховер на картинку preview-projects*/
 
-$(document).ready(function(){
-    $('.projects-hover').hover(
-        function(){
-            // $(this).siblings('.preview-projects__item-text').css('z-index','2').slideUp();
-            // $(this).siblings('.preview-projects__item-text-hover').css('opacity', '1');
-            $(this).siblings('.preview-projects__item-text-hover').slideDown(600);
-            // $(this).siblings('.preview-projects__item-text').addClass("is-hover");
-            // $(this).siblings('.preview-projects__item-text').fadeIn(1000);
-            // $(this).siblings('.preview-projects__item-text').addClass('d-flex');
-            // $(this).parent().css('width', '25%');
-
-        },
-        function(){
-            // $(this).siblings('.preview-projects__item-text').css('opacity', '0');
-            // $(this).siblings('.preview-projects__item-text-hover').css('opacity', '0');
-            $(this).siblings('.preview-projects__item-text-hover').slideUp(200);
-            // $(this).siblings('.preview-projects__item-text').removeClass("is-hover");
-            // $(this).siblings('.preview-projects__item-text').addClass('d-none');
-            // $(this).parent().css('width', '24%');
-        });
-
-});
+// $(document).ready(function(){
+//     $('.projects-hover').hover(
+//         function(){
+//             $(this).siblings('.preview-projects__item-text-hover').slideDown(600);
+//         },
+//         function(){
+//             $(this).siblings('.preview-projects__item-text-hover').slideUp(200);
+//         });
+//
+// });
 
 
 
@@ -224,17 +212,15 @@ $(document).ready(function(){
         $('body').removeClass('mob-menu-active');
     });
 
-    /**
-     * Открытие блока профиля учредителя
-     */
+    /*Открытие блока профиля учредителя*/
+
     $('#zimailo-link, #liachenko-link').click(function(){
         var block = $(this).data('block');
         $('#' + block).toggleClass('modal-profile-active');
     });
 
-    /**
-     * Закрытие блока профиля учредителя
-     */
+    /*Закрытие блока профиля учредителя*/
+
      $('.menu-icon_mobile').click(function(){
          $(this).closest('.modal-profile').removeClass('modal-profile-active');
      });

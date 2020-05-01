@@ -234,9 +234,6 @@ a {
     .preview-projects__item {
       width: 100%; } }
 
-.preview-projects__item-text-hover {
-  display: none; }
-
 .preview-projects__item-text {
   display: -webkit-box;
   display: -webkit-flex;
