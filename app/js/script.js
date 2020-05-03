@@ -135,29 +135,34 @@ $(document).ready(function(){
      * @param contentClass
      */
     function offPreloader(preloaderClass, contentClass){
-        $('.' + preloaderClass).fadeOut({
+        $('.preloader-page h1').fadeIn({
             duration: 'slow',
             easing: 'linear'
         });
 
-       $('.' + contentClass).fadeIn({
-            duration: 'slow',
-            easing: 'linear'
-        });
+        setTimeout(function(){
+            $('.' + preloaderClass).fadeOut({
+                duration: 'slow',
+                easing: 'linear'
+            });
 
-        $('.mouse-cursor').addClass('d-none');
+            $('.' + contentClass).fadeIn({
+                duration: 'slow',
+                easing: 'linear'
+            });
 
-        isotopeInit();
+            $('.mouse-cursor').addClass('d-none');
+
+            isotopeInit();
+        }, 1000);
+
+
     }
 
     $('.preloader-page').click(function(){
         offPreloader('preloader-page', 'preview-projects');
         offPreloader('preloader-page', 'select-project');
 
-    });
-
-    $('.preloader-page').scroll(function(){
-        console.log('scroll');
     });
 
     setTimeout(" $('.preloader-page').click()", 2000);
@@ -355,6 +360,7 @@ $(document).ready(function(){
     function cursorAddClass(className) {
         $(innerCursor).addClass(className);
     }
+
     function cursorRemoveClass(className) {
         $(innerCursor).removeClass(className);
     }

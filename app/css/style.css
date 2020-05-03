@@ -97,6 +97,8 @@ a {
 
 .preloader-page {
   cursor: none; }
+  .preloader-page h1 {
+    display: none; }
 
 .preloader-page__padding {
   padding-top: 70px;
