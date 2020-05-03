@@ -95,6 +95,9 @@ a {
 .text_25 {
   font-size: 25px; }
 
+.preloader-page {
+  cursor: none; }
+
 .preloader-page__padding {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -217,22 +220,23 @@ a {
   .filter-desktop:hover {
     opacity: 0.8; }
 
-.preview-projects__content {
-  margin-left: -30px;
-  margin-right: -30px; }
-
-.preview-projects__item {
-  position: relative;
-  width: 25%;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 60px; }
-  @media (max-width: 991px) {
-    .preview-projects__item {
-      width: 50%; } }
-  @media (max-width: 575px) {
-    .preview-projects__item {
-      width: 100%; } }
+.preview-projects {
+  display: none; }
+  .preview-projects__content {
+    margin-left: -30px;
+    margin-right: -30px; }
+  .preview-projects__item {
+    position: relative;
+    width: 25%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 60px; }
+    @media (max-width: 991px) {
+      .preview-projects__item {
+        width: 50%; } }
+    @media (max-width: 575px) {
+      .preview-projects__item {
+        width: 100%; } }
 
 .preview-projects__item-text-hover {
   position: absolute;
@@ -810,3 +814,57 @@ body.mobal-active {
     content: none; }
   .photo-bureau-page-full-size_mobile .counter__wrap {
     top: 80%; }
+
+/*for cursors*/
+.mouse-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 11000; }
+
+.cursor-outer {
+  position: absolute;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  border: 1px solid transparent;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  opacity: 1;
+  background-color: #4E4A48; }
+
+.cursor-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 12px;
+  text-align: center;
+  opacity: 0; }
+
+.mouse-cursor .cursor-outer {
+  width: 7px;
+  height: 7px;
+  top: -3.5px;
+  left: -3.5px; }
+
+.mouse-cursor.link .cursor-outer {
+  width: 13px;
+  height: 13px;
+  top: -6.5px;
+  left: -6.5px;
+  opacity: 0.8; }
+
+.mouse-cursor.expanded .cursor-outer {
+  border-color: #4E4A48;
+  width: 45px;
+  height: 45px;
+  top: -22.5px;
+  left: -22.5px;
+  background-color: transparent; }
+
+.mouse-cursor.expanded .cursor-text {
+  opacity: 1; }

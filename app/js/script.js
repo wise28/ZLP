@@ -1,15 +1,19 @@
 
-
 /*hover for menu-desktop*/
 $('.menu-icon').hover(
     function(){
         $('.menu-desktop-content').removeClass('d-none');
         $('.menu-desktop-content').addClass('d-inline-flex');
 
+       if($(document).width() < 1360){
+            $('.header-title').addClass('d-none');
+        }
+
     },
     function(){
         $('.menu-desktop-content').removeClass('d-inline-flex');
-        $('.menu-desktop-content').addClass('d-none')
+        $('.menu-desktop-content').addClass('d-none');
+        $('.header-title').removeClass('d-none');
     });
 
 
@@ -18,10 +22,17 @@ $('.menu-desktop-content').hover(
         $(this).removeClass('d-none');
         $(this).addClass('d-inline-flex');
 
+        if($(document).width() < 1360){
+            $('.header-title').addClass('d-none');
+        }
+
     },
     function(){
         $(this).removeClass('d-inline-flex');
-        $(this).addClass('d-none')
+        $(this).addClass('d-none');
+
+        $('.header-title').removeClass('d-none');
+
     });
 
 /*hover for filter-desktop*/
@@ -31,10 +42,15 @@ $('.filter-desktop, .menu-filter-desktop__content').hover(
         $('.menu-filter-desktop__content').removeClass('d-none');
         $('.menu-filter-desktop__content').addClass('d-inline-flex');
 
+        if($(document).width() < 1360){
+            $('.header-title').addClass('d-none');
+        }
+
     },
     function(){
         $('.menu-filter-desktop__content').removeClass('d-inline-flex');
         $('.menu-filter-desktop__content').addClass('d-none');
+        $('.header-title').removeClass('d-none');
     });
 
 //TODO: Remove this duplicate code after release
@@ -94,6 +110,23 @@ $(document).ready(function(){
     }
     descriptionPageHeight ();
 
+    function isotopeInit(){
+        // init Isotope
+
+        var $grid = $('.preview-projects__content').isotope({
+            itemSelector: '.preview-projects__item',
+            layoutMode: 'fitRows',
+            filter: '*'
+        });
+
+
+        $('.menu-filter-desktop__content').on( 'click', 'a', function() {
+            var filterValue = $( this ).attr('data-filter');
+            // use filterFn if matches value
+            //filterValue = filterFns[ filterValue ] || filterValue;
+            $grid.isotope({ filter: filterValue });
+        });
+    }
 
     /**
      * Function disabling preloader page and show content block
@@ -102,10 +135,19 @@ $(document).ready(function(){
      * @param contentClass
      */
     function offPreloader(preloaderClass, contentClass){
-        $('.' + preloaderClass).addClass('d-none');
+        $('.' + preloaderClass).fadeOut({
+            duration: 'slow',
+            easing: 'linear'
+        });
 
-        $('.' + contentClass).removeClass('d-none');
+       $('.' + contentClass).fadeIn({
+            duration: 'slow',
+            easing: 'linear'
+        });
 
+        $('.mouse-cursor').addClass('d-none');
+
+        isotopeInit();
     }
 
     $('.preloader-page').click(function(){
@@ -153,14 +195,19 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $(".onepage-wrapper").onepage_scroll({
-        sectionContainer: "section",
-        responsiveFallback: false,
-        loop: true
-    });
-    $(document).on('mousewheel DOMMouseScroll', '.awards-page', function(event) {
-        event.stopPropagation();
-    });
+    try{
+        $(".onepage-wrapper").onepage_scroll({
+            sectionContainer: "section",
+            responsiveFallback: false,
+            loop: true
+        });
+        $(document).on('mousewheel DOMMouseScroll', '.awards-page', function(event) {
+            event.stopPropagation();
+        });
+    }catch(e){
+        console.log(e.message);
+    }
+
 });
 
 /*for вуылещз menu на кранах меньше 1200*/
@@ -224,6 +271,14 @@ $(document).ready(function(){
      $('.menu-icon_mobile').click(function(){
          $(this).closest('.modal-profile').removeClass('modal-profile-active');
      });
+
+    $('#btn-up').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+
 });
 /*для преобразования меню в крестик при клике*/
 function openMobileMenu(x) {
@@ -260,3 +315,47 @@ $(window).resize(function() {
 // });
 
 
+$(document).ready(function(){
+    // set the starting position of the cursor outside of the screen
+    let clientX = -100;
+    let clientY = -100;
+    const innerCursor = document.querySelector(".mouse-cursor");
+
+    const initCursor = () => {
+        // add listener to track the current mouse position
+        document.querySelector('.preloader-page').addEventListener("mousemove", e => {
+            clientX = e.clientX;
+            clientY = e.clientY;
+        });
+
+        // transform the innerCursor to the current mouse position
+        // use requestAnimationFrame() for smooth performance
+        const render = () => {
+            innerCursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
+            // if you are already using TweenMax in your project, you might as well
+            // use TweenMax.set() instead
+            // TweenMax.set(innerCursor, {
+            //   x: clientX,
+            //   y: clientY
+            // });
+
+            requestAnimationFrame(render);
+        };
+        requestAnimationFrame(render);
+    };
+
+    initCursor();
+
+    $('.cursor_triger').hover(function() {
+        cursorAddClass($(this).data('cursor'))
+    }, function() {
+        cursorRemoveClass($(this).data('cursor'))
+    });
+
+    function cursorAddClass(className) {
+        $(innerCursor).addClass(className);
+    }
+    function cursorRemoveClass(className) {
+        $(innerCursor).removeClass(className);
+    }
+});

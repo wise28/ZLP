@@ -11,7 +11,14 @@
     <title>ZLP</title>
 </head>
 <body>
-    <div class="container preloader-page preloader-page__padding">
+    <div class="mouse-cursor">
+        <div class="cursor-outer">
+            <div class="cursor-text">
+                ВХОД
+            </div>
+        </div>
+    </div>
+    <div class="container preloader-page preloader-page__padding cursor_triger" data-cursor="expanded">
         <div class="row preloader-page__row">
             <div class="text-uppercase text-center">
                 <div class="language-wrap">
@@ -32,7 +39,7 @@
         </div>
     </div>
 
-    <div class="preview-projects d-none">
+    <div class="preview-projects">
         <div class="container d-none d-lg-block">
             <div class="row position-relative pt-4 pb-4">
                 <div class="col-6 d-flex align-items-center menu-desktop ">
@@ -59,7 +66,7 @@
                 <div class="col-6 d-flex align-items-center justify-content-end menu-filter-desktop ">
                     <div class="menu-desktop-wrap menu-filter-desktop__content align-items-center pl-2 d-none">
                         <nav>
-                            <a href="#" class="text-uppercase pr-2 link-black">ЖИЛЫЕ</a>
+                            <a href="#" class="text-uppercase pr-2 link-black" data-filter="*">ЖИЛЫЕ</a>
                             <a href="#" class="text-uppercase pr-2 link-black">ОБЩЕСТВЕННЫЕ</a>
                             <a href="#" class="text-uppercase pr-2 link-black">ИНТЕРЬЕРЫ</a>
                             <a href="#" class="text-uppercase pr-2 link-black">МАСТЕРПЛАНЫ</a>
@@ -500,7 +507,7 @@
                     <div><a href="tel:74957907976" class="link-black">7 (495) 790-79-76</a></div>
                 </div>
                 <div class="col-6 d-flex flex-column align-items-end justify-content-between">
-                    <button class="btn btn-back">НАВЕРХ</button>
+                    <button class="btn btn-back" id="btn-up">НАВЕРХ</button>
                     <div>Developed — <a href="#" class="text-uppercase link-black">ARKVISION</a></div>
                 </div>
             </div>
@@ -535,5 +542,6 @@
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/slick.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
 <script src="js/script.js"></script>
 </html>
