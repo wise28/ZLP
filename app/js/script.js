@@ -336,6 +336,10 @@ $(document).ready(function(){
             }
         });
 
+        $('.projest-slide').on('init', function(event, slick){
+            $('.slide-number .all-number-slide').html(slick.$slides.length < 10 ? '0' + slick.$slides.length : slick.$slides.length);
+        });
+
         $('.projest-slide').on('afterChange', function(event, slick, currentSlide, nextSlide){
             let slideNum = currentSlide < 10 ? '0' + (currentSlide + 1) : currentSlide;
             $('.slide-number .active-number').html(slideNum);
