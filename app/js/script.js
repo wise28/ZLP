@@ -107,7 +107,7 @@ $(document).ready(function(){
 
 
     }
-    descriptionPageHeight ();
+    //descriptionPageHeight ();
 
     function isotopeInit(){
         // init Isotope
@@ -161,7 +161,10 @@ $(document).ready(function(){
 
         }, 1000);
 
-        slideInit();
+
+            slideInit();
+
+
     }
 
     $('.preloader-page').click(function(){
@@ -255,7 +258,12 @@ $(window).resize(function() {
         $('.projest-slide').css('height', '600px');
         $('.projest-slide img').css('height', '600px');
     }
-    $('.projest-slide').slick({});
+    try{
+        $('.projest-slide').slick({});
+    }catch(e){
+
+    }
+
 });
 
 $(document).ready(function(){
