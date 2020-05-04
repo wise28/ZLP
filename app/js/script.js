@@ -82,13 +82,12 @@ $('.filter-desktop, .menu-filter-desktop__content').hover(
 
 
 //инициализация слайдеров на странице projects education bureau
-$(document).ready(function(){
-    $('.projest-slide').slick({});
+function slideInit(){
     $('.education-slide').slick({});
     $('.bureau-mobile-slide').slick({});
     $('.education-mobile-slide').slick({});
-});
-
+    $('.projest-slide').slick({});
+}
 
 /*вычисление высоты блока с описанием проекта*/
 $(document).ready(function(){
@@ -153,10 +152,16 @@ $(document).ready(function(){
 
             $('.mouse-cursor').addClass('d-none');
 
-            isotopeInit();
+            try{
+
+                isotopeInit();
+            }catch(e){
+
+            }
+
         }, 1000);
 
-
+        slideInit();
     }
 
     $('.preloader-page').click(function(){
@@ -335,6 +340,9 @@ $(document).ready(function(){
         // transform the innerCursor to the current mouse position
         // use requestAnimationFrame() for smooth performance
         const render = () => {
+            if(!innerCursor){
+                return;
+            }
             innerCursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
             // if you are already using TweenMax in your project, you might as well
             // use TweenMax.set() instead
