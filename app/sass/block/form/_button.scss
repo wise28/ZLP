@@ -35,6 +35,7 @@
     background-color: transparent;
   }
   img {
+    min-width: 22px;
     &:hover {
       opacity: 0.6;
     }

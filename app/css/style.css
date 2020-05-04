@@ -33,8 +33,10 @@
   border: none; }
   .btn-up-mobile:hover {
     background-color: transparent; }
-  .btn-up-mobile img:hover {
-    opacity: 0.6; }
+  .btn-up-mobile img {
+    min-width: 22px; }
+    .btn-up-mobile img:hover {
+      opacity: 0.6; }
 
 .btn_margin {
   margin-top: 16px; }
@@ -148,6 +150,8 @@ a {
   z-index: 5; }
   .menu-icon:hover {
     opacity: 0.8; }
+  .menu-icon_margin {
+    margin-right: 0; }
 
 .menu-desktop-content {
   margin-left: -40px; }
@@ -243,10 +247,11 @@ a {
 .preview-projects__item-text-hover {
   position: absolute;
   width: 100%;
-  -webkit-transform: translateY(-34px);
-      -ms-transform: translateY(-34px);
-          transform: translateY(-34px);
-  z-index: 1; }
+  top: 70%;
+  z-index: 1;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
 
 .preview-projects__item-text {
   display: -webkit-box;
@@ -264,15 +269,19 @@ a {
   z-index: 2; }
 
 .projects-hover {
-  position: relative; }
+  position: relative;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
   .projects-hover:hover {
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
-            transform: scale(1.1); }
+            transform: scale(1.1);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
     .projects-hover:hover .preview-projects__item-text-hover {
-      -webkit-transform: translateY(-4px);
-          -ms-transform: translateY(-4px);
-              transform: translateY(-4px);
+      top: 98%;
       -webkit-transition: all 0.5s;
       -o-transition: all 0.5s;
       transition: all 0.5s; }
@@ -284,6 +293,7 @@ a {
   height: 600px; }
   .projest-slide img {
     width: 100%;
+    height: 600px;
     -o-object-fit: cover;
        object-fit: cover; }
 
@@ -310,7 +320,8 @@ a {
           justify-content: center; }
 
 .description-page {
-  height: 100vh; }
+  height: 100vh;
+  display: none; }
 
 .description-page__container {
   display: -webkit-box;
@@ -754,7 +765,7 @@ body.mob-menu-active {
   height: 15px;
   position: relative;
   width: 30px;
-  margin-right: 40px;
+  margin-right: 0;
   z-index: 5; }
   .modal-profile .menu-icon_mobile:hover {
     opacity: 0.8; }

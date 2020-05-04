@@ -24,7 +24,7 @@ gulp.task('browser-sync', function(){
     browserSync({
         server: {
           baseDir: 'app',
-          index: 'index.html'
+          index: 'select-project-page.html'
         },
         notify: false
     });
