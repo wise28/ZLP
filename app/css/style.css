@@ -319,6 +319,9 @@ a {
 .description-page {
   height: 100vh;
   display: none; }
+  .description-page__text {
+    max-height: 80px;
+    overflow: hidden; }
 
 .description-page__container {
   display: -webkit-box;

@@ -266,6 +266,8 @@ $(document).ready(function(){
         }catch(e){
             console.log(e.message);
         }
+
+
     }
 
     /**
@@ -357,8 +359,16 @@ $(document).ready(function(){
         });
     }
 
+    $('.btn-details').click(function(){
+        console.log($(this).closest('.description-page__text'));
+        $(this).closest('.description-page__text').css('max-height', 'initial');
+
+    });
+
     /**********************************************/
 });
+
+
 
 
 /*for menu на экранах меньше 1360*/
