@@ -299,8 +299,11 @@ $(document).ready(function(){
                     break;
 
                 case 40:
+                case 27:
                     offPreloader('description-page', 'select-project');
                     break;
+
+
             }
         });
 
@@ -337,7 +340,12 @@ $(document).ready(function(){
         });
 
         $('.projest-slide').on('init', function(event, slick){
-            $('.slide-number .all-number-slide').html(slick.$slides.length < 10 ? '0' + slick.$slides.length : slick.$slides.length);
+            try{
+                $('.slide-number .all-number-slide').html(slick.$slides.length < 10 ? '0' + slick.$slides.length : slick.$slides.length);
+            }catch(e){
+
+            }
+
         });
 
         $('.projest-slide').on('afterChange', function(event, slick, currentSlide, nextSlide){
