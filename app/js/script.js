@@ -317,8 +317,16 @@ $(document).ready(function(){
         });
 
         $('.btn-details').click(function(){
-            offPreloader('select-project', 'description-page');
-            descriptionPageHeight();
+
+            try{
+                offPreloader('select-project', 'description-page');
+            }catch(e){
+
+            }
+
+            //descriptionPageHeight();
+            $('.description-page__text').css('max-height', 'initial');
+
         });
 
         $(window).resize(function() {
@@ -364,11 +372,11 @@ $(document).ready(function(){
 
     }
 
-    $('.btn-details').click(function(){
-        console.log($(this).closest('.description-page__text'));
-        $(this).closest('.description-page__text').css('max-height', 'initial');
-
-    });
+    // $('.btn-details').click(function(){
+    //     console.log('click');
+    //     // $(this).closest('.description-page__text').css('max-height', 'initial');
+    //
+    // });
 
     $(document).on('click', '.left-block', function(){
         $('.projest-slide').slick('slickPrev');
