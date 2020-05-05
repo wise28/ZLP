@@ -890,14 +890,16 @@ body.mobal-active {
     height: 100%;
     width: 50%;
     left: 0;
-    top: 0; }
+    top: 0;
+    cursor: url("../img/icons/slide-arrow-left.svg"), auto; }
   .slide-wrap .right-block {
     position: absolute;
     content: '';
     height: 100%;
     width: 50%;
     right: 0;
-    top: 0; }
+    top: 0;
+    cursor: url("../img/icons/slide-arrow-right.svg"), auto; }
 
 .cursor-text-dagger {
   position: absolute;

@@ -815,6 +815,7 @@ body.mobal-active {
     width: 50%;
     left: 0;
     top: 0;
+    cursor: url('../img/icons/slide-arrow-left.svg'), auto;
   }
   .right-block {
     position: absolute;
@@ -823,6 +824,7 @@ body.mobal-active {
     width: 50%;
     right: 0;
     top: 0;
+    cursor: url('../img/icons/slide-arrow-right.svg'), auto;
   }
 }
 

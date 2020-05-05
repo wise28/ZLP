@@ -113,7 +113,10 @@ $(document).ready(function(){
                 easing: 'linear'
             });
 
-            $('.mouse-cursor').addClass('d-none');
+            if(!$('body').hasClass('select-project-page')){
+                $('.mouse-cursor').addClass('d-none');
+            }
+
 
             try{
 
@@ -126,6 +129,7 @@ $(document).ready(function(){
 
         if($('body').hasClass('select-project-page')) {
             $('.select-project').css('display', 'flex');
+
         }
             slideInit();
     }
@@ -357,6 +361,7 @@ $(document).ready(function(){
             let slideNum = currentSlide < 10 ? '0' + (currentSlide + 1) : currentSlide;
             $('.slide-number .active-number').html(slideNum);
         });
+
     }
 
     $('.btn-details').click(function(){
@@ -365,6 +370,13 @@ $(document).ready(function(){
 
     });
 
+    $(document).on('click', '.left-block', function(){
+        $('.projest-slide').slick('slickPrev');
+    });
+
+    $(document).on('click', '.right-block', function(){
+        $('.projest-slide').slick('slickPrev');
+    });
     /**********************************************/
 });
 
