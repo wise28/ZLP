@@ -878,3 +878,49 @@ body.mobal-active {
 
 .mouse-cursor.expanded .cursor-text {
   opacity: 1; }
+
+.slide-wrap {
+  position: relative; }
+  .slide-wrap .left-block {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 50%;
+    left: 0;
+    top: 0; }
+  .slide-wrap .right-block {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 50%;
+    right: 0;
+    top: 0; }
+
+.cursor-text-dagger {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3; }
+
+.cursor-text-dagger:hover {
+  opacity: 1; }
+
+.cursor-text-dagger:before, .cursor-text-dagger:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333; }
+
+.cursor-text-dagger:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.cursor-text-dagger:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }

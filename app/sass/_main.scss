@@ -799,3 +799,49 @@ body.mobal-active {
 //body, body a {
 //  cursor: none;
 //}
+
+.slide-wrap {
+  position: relative;
+  .left-block {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 50%;
+    left: 0;
+    top: 0;
+  }
+  .right-block {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 50%;
+    right: 0;
+    top: 0;
+  }
+}
+
+.cursor-text-dagger {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.cursor-text-dagger:hover {
+  opacity: 1;
+}
+.cursor-text-dagger:before, .cursor-text-dagger:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.cursor-text-dagger:before {
+  transform: rotate(45deg);
+}
+.cursor-text-dagger:after {
+  transform: rotate(-45deg);
+}
