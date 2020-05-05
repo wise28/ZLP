@@ -124,6 +124,9 @@ $(document).ready(function(){
 
         }, 1000);
 
+        if($('body').hasClass('select-project-page')) {
+            $('.select-project').css('display', 'flex');
+        }
             slideInit();
     }
 
